@@ -1,0 +1,65 @@
+// responsive Setting
+$breakpoints: (
+  mb: (
+    768px: "모바일",
+  ),
+  tab: (
+    1080px: "태블릿",
+  ),
+  web: (
+    1440px: "웹",
+  ),
+);
+// responsive setting
+@function device($device, $arg) {
+  $device-value: map-get($breakpoints, $device);
+  $device-px: map-keys($device-value);
+  $device-desc: map-values($device-value);
+
+  @if ($arg == "key") {
+    @return $device-px;
+  } @else if($arg == "value") {
+    @return $device-desc;
+  }
+}
+@mixin media-dv($device, $range: max) {
+  @media all and (#{$range}-width: device($device, "key")) {
+    @content;
+  }
+}
+
+@mixin labtop {
+  @include media-dv(web) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include media-dv(tab) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include media-dv(mb) {
+    @content;
+  }
+}
+// 스크린 리더
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}

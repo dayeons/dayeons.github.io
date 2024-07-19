@@ -1,0 +1,28 @@
+footer {
+  color: #fff;
+  background-color: #131313;
+  .container {
+    padding-top: 240px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 8vw;
+    }
+    ul {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        gap: 10px;
+        text-transform: uppercase;
+        a {
+          display: block;
+          color: #aaa;
+        }
+      }
+    }
+  }
+}

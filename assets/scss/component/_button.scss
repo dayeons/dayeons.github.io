@@ -1,0 +1,38 @@
+.btn {
+  display: inline-block;
+  font-size: 1.25rem;
+  line-height: 68px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  font-weight: 800;
+  width: 300px;
+  border-radius: 35px;
+  &--dark {
+    color: #fff;
+    background: #000;
+    &:hover,
+    &:active,
+    &:focus {
+      background: #444;
+    }
+  }
+  &--light {
+    color: #000;
+    background: #fff;
+    &:hover,
+    &:active,
+    &:focus {
+      background: #e1e1e1;
+    }
+  }
+  &--link {
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    background: url("../img/icon-link.png") 0 0 no-repeat;
+    background-size: contain;
+  }
+  @include tablet {
+    line-height: 60px;
+  }
+}
