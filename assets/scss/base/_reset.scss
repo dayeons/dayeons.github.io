@@ -20,6 +20,7 @@ button {
   padding: 0;
   overflow: visible;
   cursor: pointer;
+  font-family: "NanumSquareNeo";
 }
 
 ul,
@@ -28,4 +29,13 @@ ol {
 }
 .hidden {
   @include sr-only;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus,
+button:focus {
+  outline: 2px dashed #bd413d;
 }

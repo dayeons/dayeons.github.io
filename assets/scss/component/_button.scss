@@ -26,13 +26,23 @@
     }
   }
   &--link {
-    width: 36px;
-    height: 36px;
+    width: 22px;
+    height: 22px;
     border-radius: 36px;
     background: url("../img/icon-link.png") 0 0 no-repeat;
     background-size: contain;
+    vertical-align: middle;
   }
   @include tablet {
     line-height: 60px;
+  }
+  @include mobile {
+    &--dark,
+    &--light {
+      width: 260px;
+      display: block;
+      margin: auto;
+      font-size: 1rem;
+    }
   }
 }
