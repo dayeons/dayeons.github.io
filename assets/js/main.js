@@ -194,14 +194,12 @@ function openPdf(pdfUrl) {
   var isAndroid = /Android/i.test(navigator.userAgent);
   var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  if (isAndroid) {
+  if (isAndroid && isIOS) {
     window.open(
       "http://docs.google.com/gview?embedded=true&url=" +
-        encodeURIComponent(pdfUrl)
+        decodeURIComponent(pdfUrl)
     );
-  } else if (isIOS) {
-    window.open(pdfUrl, "_blank");
   } else {
-    window.open("/ebook/openPdf?url=" + encodeURIComponent(pdfUrl));
+    window.open(pdfUrl, "_blank");
   }
 }
