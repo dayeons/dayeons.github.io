@@ -1,7 +1,7 @@
-var winScrollTop;
-var section = $(".section");
-var offsetTop = [];
-var offsetBottom = [];
+let winScrollTop;
+const section = $(".section");
+const offsetTop = [];
+const offsetBottom = [];
 
 function setValue() {
   winScrollTop = $(window).scrollTop();
@@ -29,7 +29,7 @@ function init() {
   checkInSection();
 }
 function listActive(index) {
-  var list = $(".nav-list li a");
+  const list = $(".nav-list li a");
   list.removeClass("active");
   list.eq(index).addClass("active");
   list.parents().parents("header").removeClass("on");
@@ -47,9 +47,9 @@ $(".nav-list li a").click(function (e) {
   }
 });
 /* project */
-var ww = $(window).width();
-var mySwiper = undefined;
-var pagingSwiper = undefined;
+let ww = $(window).width();
+let mySwiper = undefined;
+let pagingSwiper = undefined;
 
 function initSwiper() {
   if (ww < 1080 && mySwiper == undefined && pagingSwiper == undefined) {
@@ -87,8 +87,8 @@ function projectItemActive() {
   if (ww >= 1080) {
     $(".project-list__item:first-child").addClass("active");
     $(".project-list__item").on("mouseenter", function () {
-      var idx = $(this).index();
-      var _this = $(".project-list__item");
+      const idx = $(this).index();
+      const _this = $(".project-list__item");
       _this.removeClass("active");
       _this.eq(idx).addClass("active");
     });
@@ -114,9 +114,9 @@ $(window).on("scroll", function () {
   listActive();
   checkInSection();
   /*  */
-  var images = document.querySelectorAll(".img-area > img");
-  var e = window.scrollY;
-  var transformValue = "translateY(".concat(e / 25, "px)");
+  const images = document.querySelectorAll(".img-area > img");
+  const e = window.scrollY;
+  const transformValue = "translateY(".concat(e / 25, "px)");
   images.forEach((img) => {
     img.style.transform = transformValue;
   });
@@ -167,7 +167,7 @@ $(function () {
   /* 모달 */
   $(".modal-link").on("click", function (e) {
     e.preventDefault();
-    var url = $(this).attr("href");
+    const url = $(this).attr("href");
 
     // Load content into modal__inner
     $(".modal__inner").load(url, function () {
@@ -191,8 +191,8 @@ $(function () {
 });
 
 function openPdf(pdfUrl) {
-  var isAndroid = /Android/i.test(navigator.userAgent);
-  var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isAndroid && isIOS) {
     window.open(
